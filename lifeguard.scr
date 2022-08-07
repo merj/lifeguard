@@ -1,0 +1,16 @@
+: evaluator ( a # ~ - ~ *)
+  dup # 1 = if 2drop exit then
+  # 128 block t!  here' @t here!
+  text# !t text !t  \ [ compile \ ]
+  here@ here' !t
+  ."  ok ( " depth . drop ." )" cr ;
+
+' evaluator >body # 1 task !
+
+
+
+
+
+
+
+
